@@ -20,16 +20,16 @@ public class JoinServlet extends HttpServlet {
 		String password = request.getParameter("password");
 		String birthYear = request.getParameter("birthYear");
 		String gender = request.getParameter("gender");
-		String[] hobbies = request.getParameterValues("hobby");
+//		String[] hobbies = request.getParameterValues("hobby");
 		String desc = request.getParameter("desc");
 		
 		System.out.println("email : " + email);
 		System.out.println("password : " + password);
 		System.out.println("birthYear : " + birthYear);
 		System.out.println("gender : " + gender);
-		for(String hobby : hobbies) {
-			System.out.println("hobby : "+hobby);
-		}
+//		for(String hobby : hobbies) {
+//			System.out.println("hobby : "+hobby);
+//		}
 		System.out.println("desc : " + desc);
 		
 		response.setContentType("text/html; charset=utf-8");
