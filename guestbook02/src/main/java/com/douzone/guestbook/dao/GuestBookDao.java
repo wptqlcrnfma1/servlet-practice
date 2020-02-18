@@ -77,8 +77,6 @@ public class GuestBookDao {
 		
 		try {
 			conn = getConnection();
-
-			//insert into emaillist values (null, '김', '정석', 'zozfd@daum.net');
 			
 			String sql = "insert into guestbook values(null, ?, ?, ?,?)";
 			pstmt = conn.prepareStatement(sql);
