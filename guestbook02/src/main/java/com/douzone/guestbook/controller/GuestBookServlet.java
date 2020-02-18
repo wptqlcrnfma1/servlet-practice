@@ -46,21 +46,19 @@ public class GuestBookServlet extends HttpServlet {
 			response.sendRedirect(request.getContextPath() + "/gb");
 
 		} else if ("deleteform".equals(action)) {
-			RequestDispatcher rd = request.getRequestDispatcher("/views/deleteform.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/deleteform.jsp");
 			rd.forward(request, response);
 		} else if ("delete".equals(action)) {
 			String no = request.getParameter("no");	 // 받아온 no값
 			String password = request.getParameter("password"); // 입력한거
 		
-
 			GuestBookVo vo = new GuestBookVo();
 
 			vo.setNo(Long.parseLong(no));
 			vo.setPassword(password);
-			
 			if (new GuestBookDao().delete(vo)) {
 				new GuestBookDao().delete(vo);
-				response.sendRedirect("/guestbook02/index.jsp");
+				response.sendRedirect(request.getContextPath() + "/gb");
 			} else {
 				PrintWriter script = response.getWriter();
 				script.println("<script>");
@@ -78,7 +76,7 @@ public class GuestBookServlet extends HttpServlet {
 			List<GuestBookVo> list = new GuestBookDao().findAll();
 
 			request.setAttribute("list", list);
-			RequestDispatcher rd = request.getRequestDispatcher("/views/index.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/index.jsp");
 			rd.forward(request, response);
 		}
 	}
