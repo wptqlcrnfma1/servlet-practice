@@ -31,9 +31,6 @@ public class JoinServlet extends HttpServlet {
 //			System.out.println("hobby : "+hobby);
 //		}
 		System.out.println("desc : " + desc);
-		
-		response.setContentType("text/html; charset=utf-8");
-		response.getWriter().println("ok");
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
