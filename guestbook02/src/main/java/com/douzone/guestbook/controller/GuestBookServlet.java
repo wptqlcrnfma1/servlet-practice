@@ -48,26 +48,16 @@ public class GuestBookServlet extends HttpServlet {
 			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/deleteform.jsp");
 			rd.forward(request, response);
 		} else if ("delete".equals(action)) {
-			String no = request.getParameter("no");	 // 받아온 no값
+			String no = request.getParameter("no"); // 받아온 no값
 			String password = request.getParameter("password"); // 입력한거
-		
+
 			GuestBookVo vo = new GuestBookVo();
 
 			vo.setNo(Long.parseLong(no));
 			vo.setPassword(password);
-			if (new GuestBookDao().delete(vo)) {
-				new GuestBookDao().delete(vo);
-				response.sendRedirect(request.getContextPath() + "/gb");
-			} else {
-				PrintWriter script = response.getWriter();
-				script.println("<script>");
-				script.println("alert('비밀번호 오류')");
-				script.println("location.href = 'index.jsp'");
-				script.println("</script>");
-			}
-			new GuestBookDao().delete(vo);
-			response.sendRedirect( request.getContextPath() + "/gb" );
 
+			new GuestBookDao().delete(vo);
+			response.sendRedirect(request.getContextPath() + "/gb");
 		}
 
 		else {
