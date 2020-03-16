@@ -22,7 +22,7 @@ public class EmaillistDao {
 		try {
 			conn = getConnection();
 
-			String sql = "select frist_name , last_name , email "
+			String sql = "select first_name , last_name , email "
 					+ " from emaillist " + 
 					"order by no desc;";
 			pstmt = conn.prepareStatement(sql);
