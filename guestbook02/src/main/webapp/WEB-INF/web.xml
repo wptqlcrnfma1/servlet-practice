@@ -6,7 +6,7 @@
 	<display-name>guestbook02</display-name>
 
 	<servlet>
-		<servlet-name>GuestbookServlet</servlet-name>
+		<servlet-name>GuestBookServlet</servlet-name>
 		<servlet-class>com.douzone.guestbook.controller.GuestBookServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
