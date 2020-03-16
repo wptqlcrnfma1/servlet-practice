@@ -15,7 +15,6 @@ import javax.servlet.http.HttpServletResponse;
 import com.douzone.guestbook.dao.GuestBookDao;
 import com.douzone.guestbook.vo.GuestBookVo;
 
-//@WebServlet("/gb")
 public class GuestBookServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
